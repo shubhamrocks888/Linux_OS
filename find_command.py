@@ -236,7 +236,45 @@ testdir1/  testdir2/  testdir3/
 
 #NOTE: '-exec' is for running command on results
         '{}' is for results
-        '+' is for ending the command.
+        '+' or '\;' is for ending the command.
+
+#NOTE: Better to use '\l;' for ending the command
+
+'Example': find demo.py file and rename it to demoo.py, within current directory
+
+$ ls
+demo.py  testdir1/  testdir2/  testdir3/
+
+$ find . -maxdepth 1 -type f -name "*.py" -exec mv {} demoo.py \;
+
+$ ls
+demoo.py  testdir1/  testdir2/  testdir3/
+
+
+'Example': find demo.py file and move it to sub-directory testdir1
+
+$ ls
+demo.py  testdir1/  testdir2/  testdir3/
+
+
+$ find . -maxdepth 1 -type f -name "*.py" -exec mv {} ./testdir1 \;
+
+$ find
+.
+./testdir1
+./testdir1/demoo.py
+./testdir1/demoo1.py
+./testdir2
+./testdir2/demoo2.py
+./testdir3
+./testdir3/demoo3.py
+
+
+
+
+
+
+
 
         
 
