@@ -1,0 +1,35 @@
+1.	pip help ---> list out all the commands and options
+
+2.	pip help <command> ---> list out all the option of that command
+
+3.	pip search <package_name>:
+	
+	Pympler                   - A development tool to measure, monitor and analyze the memory behavior of Python objects.
+
+4.	pip install <package_name>
+
+5.	pip list  ---> list out all the packages that we installed
+
+6.	pip uninstall <package_name> --> uninstall the package
+
+7. 	pip list -o "OR" pip list --outdated --->list out the packages that are outdated
+
+8.	pip install -U <package_name> ---> upgrade the package 
+
+9.	List out all the packages that you need for project:
+
+	pip freeze
+
+10.	Print out all the packages that you need for project in a txt file:
+
+	pip freeze > <file_name> :: pip freeze > requirements.txt
+
+11.	Install all the packages in a file:
+
+	pip install -r <file_name>	::	pip install -r requirements.txt
+
+12.	Update all the packages just by single command:
+
+	pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	  
